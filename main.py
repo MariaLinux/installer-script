@@ -13,7 +13,7 @@ def parse_args() -> str:
     """This is a function to handle the parsing of command line args passed to the program."""
 
     parser = argparse.ArgumentParser(
-        prog="Xenia Installer", description="Program to install Xenia Linux."
+        prog="MariaLinux Installer", description="Program to install Maria Linux."
     )
     parser.add_argument(
         "-c",

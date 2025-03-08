@@ -30,7 +30,7 @@ def get_url(config_parsed):
         config_parsed["release_branch"]
     ]["filename"]
 
-    return f"{config_parsed['repository']}{arch}/{config_parsed['release_branch']}/{filename}"
+    return f"{config_parsed['repository']}/{filename}"
 
 
 # End of foxupdate code
@@ -76,8 +76,8 @@ def parse_config(config_file: dict, interactive: bool = False) -> dict or str:
         "repository": {
             "func": common.check_url,
             "mode": "check",
-            "default": "https://repo.xenialinux.com/releases/",
-            "valid_text": "a URL that points to a Xenia repository (remember the trailing slash)",
+            "default": "http://151.232.8.86:5000/",
+            "valid_text": "a URL that points to a Maria repository (remember the trailing slash)",
         },
         "flavour": {
             "func": get_flavours,

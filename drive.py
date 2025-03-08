@@ -26,7 +26,7 @@ LAYOUTS = {
         {"size": "8G", "label": "ROOTS", "format": "ext4", "type": "linux"},
         {
             "size": True,
-            "label": "XENIA",
+            "label": "MARIA",
             "format": "luks",
             "inside": {
                 "size": True,
@@ -189,7 +189,7 @@ def format_drive(drive: str, layout: list) -> None:
                     f"cryptsetup -q config {name} --label {partition['label']}"
                 )
                 common.execute(
-                    f"cryptsetup luksOpen /dev/disk/by-label/{partition['label']} xenia"
+                    f"cryptsetup luksOpen /dev/disk/by-label/{partition['label']} maria"
                 )
 
-                format_drive(f"/dev/mapper/xenia", [partition["inside"]])
+                format_drive(f"/dev/mapper/maria", [partition["inside"]])
